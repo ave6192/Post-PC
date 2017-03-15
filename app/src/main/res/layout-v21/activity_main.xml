@@ -45,28 +45,31 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="41dp"
-        android:layout_height="27dp"
-        android:layout_marginRight="49dp"
+        android:layout_width="94dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
-        android:text="צ'אט"
+        android:text="Aviv's chat"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline3"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:fontFamily="sans-serif-condensed"
-        app:layout_constraintRight_toLeftOf="@+id/guideline4" />
+        tools:fontFamily="sans-serif-condensed" />
 
     <TextClock
         android:id="@+id/textClock"
         android:layout_width="56dp"
         android:layout_height="27dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
         android:textAppearance="@android:style/TextAppearance.Material.Small"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/textView"
+        app:layout_constraintRight_toLeftOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="parent"
-        tools:fontFamily="sans-serif-condensed"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline3"
-        app:layout_constraintRight_toLeftOf="@+id/textView"
-        android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="1.0" />
+        tools:fontFamily="sans-serif-condensed" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -106,14 +109,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guideline3"
-        app:layout_constraintGuide_begin="89dp"
+        app:layout_constraintGuide_begin="60dp"
         android:orientation="vertical" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guideline4"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="89dp" />
+        app:layout_constraintGuide_begin="279dp"
+        android:orientation="vertical" />
 
 </android.support.constraint.ConstraintLayout>

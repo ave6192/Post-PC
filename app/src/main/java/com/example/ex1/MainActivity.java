@@ -2,6 +2,7 @@ package com.example.ex1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -39,11 +40,31 @@ public class MainActivity extends AppCompatActivity {
         this.listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(adapter);
 
+        TextView title = (TextView) findViewById(R.id.textView);
+        title.setText("צ'אט");
+
         editText = (EditText) findViewById(R.id.editText);
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEND) {
+                    String msg = String.valueOf(editText.getText());
+                    if(msg.length() > 0)
+                    {
+//                        updateListView(time.format(new Date() +"\n")+msg);
+                        updateListView(msg);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+
+        editText.setOnKeyListener(new View.OnKeyListener() {
+
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
                     String msg = String.valueOf(editText.getText());
                     if(msg.length() > 0)
                     {
