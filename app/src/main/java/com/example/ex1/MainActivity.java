@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView title = (TextView) findViewById(R.id.textView);
         title.setText("צ'אט");
+        //
 
         editText = (EditText) findViewById(R.id.editText);
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
