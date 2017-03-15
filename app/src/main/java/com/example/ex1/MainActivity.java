@@ -35,18 +35,9 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("on create");
         send = (ImageView) findViewById(R.id.send);
 
-//        List<String> chat = new ArrayList<String>();
-//        if(this.chat == null)
-//            this.chat = new ArrayList<String>();
-        chat.add("Hello");
-        if(this.adapter == null)
-            this.adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, chat);
-//        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, chat);
+        this.adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, chat);
         this.listView = (ListView) findViewById(R.id.list_view);
-//        ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(adapter);
-//        TextView title = (TextView) findViewById(R.id.textView);
-//        title.setText(timeString);
 
         editText = (EditText) findViewById(R.id.editText);
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -83,12 +74,5 @@ public class MainActivity extends AppCompatActivity {
         editText.setText("");
     }
 
-
-
-    @Override
-    protected void onDestroy() {
-
-        super.onDestroy();
-    }
 }
 
